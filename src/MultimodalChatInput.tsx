@@ -38,11 +38,14 @@ class MultimodalChatInput extends StreamlitComponentBase<State> {
 
   handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.processFiles(event.target.files);
-
+  
     if (this.fileInputRef.current) {
-      this.fileInputRef.current.value = "";
+      setTimeout(() => {
+        this.fileInputRef.current!.value = "";
+      }, 1);  // Introduce a delay
     }
   };
+  
 
   handleRemoveFile = (indexToRemove: number) => {
     this.setState(prevState => ({
