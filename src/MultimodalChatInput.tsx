@@ -141,9 +141,6 @@ class MultimodalChatInput extends StreamlitComponentBase<State> {
               accept="image/*,.pdf,.docx,.xlsx"
               multiple
               onChange={this.handleFileChange}
-              onClick={(e) => {
-                (e.target as HTMLInputElement).value = "";  // Reset the file input on click
-              }}
               style={{ display: "none" }}
             />
           </label>
